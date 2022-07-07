@@ -10,6 +10,11 @@ public class PlayerLook : MonoBehaviour
     bool isMouse;
     Vector2 currentCursorPos;
 
+    public Quaternion lookRotation 
+    { 
+        get { return torso.transform.rotation; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +34,6 @@ public class PlayerLook : MonoBehaviour
     {
        //processes mouse and right stick movement
         currentCursorPos = context.ReadValue<Vector2>();
-        Debug.Log(currentCursorPos);
         if (context.control.name.Equals("position"))    //if mouse movement
         {
             isMouse = true;
