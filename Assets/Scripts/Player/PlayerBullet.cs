@@ -15,8 +15,7 @@ public class PlayerBullet : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = new(0, 0, 0);
         transform.rotation = player.GetComponent<PlayerLook>().lookRotation;
-        transform.position = player.transform.position + (0.5f * player.transform.position.normalized);
-        transform.position = new(transform.position.x, 0, transform.position.z);
+        transform.position = new(player.transform.position.x, 0, player.transform.position.z);
         GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.Impulse);
         Invoke("Disable", 1f);
     }

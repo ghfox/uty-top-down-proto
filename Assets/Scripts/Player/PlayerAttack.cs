@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
     
     public void Fire(InputAction.CallbackContext context)
     {
-        bulletPool.Next();
+        if(context.performed)
+            bulletPool.Next();
     }
 }
